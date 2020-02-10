@@ -1,0 +1,164 @@
+@font-face {
+    font-family: "Calibri";
+    src: url('font/calibri.ttf');
+}
+@font-face {
+    font-family: "Calibrib";
+    font-style: italic;
+    src: url('font/calibrib.ttf');
+}
+@font-face {
+    font-family: "Calibrii";
+    font-weight: bold;
+    src: url('font/calibrii.ttf');
+}
+@font-face {
+    font-family: "Calibril";
+    font-weight: bold;
+    src: url('font/calibrii.ttf');
+}
+@font-face {
+    font-family: "Calibrili";
+    font-weight: bold;
+    src: url('font/calibrii.ttf');
+}
+@font-face {
+    font-family: "Calibriz";
+    font-weight: bold;
+    src: url('font/calibriz.ttf');
+}
+@font-face {
+    font-family: "ERASBD";
+    font-weight: bold;
+    src: url('font/ERASBD.TTF');
+}
+@font-face {
+    font-family: "ERASDEMI";
+    font-weight: bold;
+    src: url('font/ERASDEMI.TTF');
+}
+@font-face {
+    font-family: "EARSLGHT";
+    font-weight: bold;
+    src: url('font/ERASLGHT.TTF');
+}
+
+
+body{
+    background-color: gray;
+}
+
+#page{
+    margin: auto;
+    max-width: 960px;
+}
+
+#titre {
+    background-color: #EAE5DF;
+    height: 175px;
+    width: 70%;
+    float: left;
+    color: grey;
+    text-align: center;
+    font-size: larger;
+}
+
+#authentification {
+    background-color: #8A5D1D;
+    height: 175px;
+    width: 30%;
+    float: left;
+}
+
+#contenu {
+    background-color: #EAE5DF;
+    height: 500px;
+    width: 70%;
+    float: left;
+}
+
+#contenu figure{
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    border: solid;
+    border-color: #8A5D1D;
+    border-width: 2px;
+    text-align: center;
+    background-color: white;
+}
+
+#contenu figure img{
+    height: 120px;
+}
+
+#panier {
+    background-color: #861825;
+    color: #FFFFCC;
+    height: 500px;
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+
+#panier a{
+    padding: 5px;
+    background-color: #FFAAAA;
+    border-radius: 10px;
+}
+
+
+#piedPage {
+    background-color: #8A5D1D;
+    color: #FFFFCC;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    clear: both;
+    bottom: 0;
+}
+
+@media screen and (max-width: 580px) {
+    #titre {
+        background-color: #EAE5DF;
+        height: auto;
+        width: 100%;
+        clear: both;
+    }
+
+    #titre h1{
+        font-size: 26px;
+    }
+
+    #titre img{
+        width: 100px;
+    }
+
+    #authentification {
+        width: 100%;
+        clear: both;
+    }
+
+    #contenu {
+        width: 100%;
+        clear: both;
+    }
+
+    #contenu img{
+        width: 130px;
+        height: 130px;
+        margin: 20px;
+        clear: both;
+    }
+
+    #panier {
+        height: auto;
+        min-height: 0;
+        width: 100%;
+        clear: both;
+    }
+
+    #piedPage {
+        display: none;
+    }
+}
