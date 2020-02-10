@@ -15,7 +15,7 @@ $db = connect();
 <body>
     <div id="page">
         <div id="titre">
-            <img width="30%" style="float: left" src="img/logo_500px.gif" >  <p>le leader du modélisme en ligne</p>
+            <img width="30%" style="float: left" src="img/logo_200px.gif" >  <p>le leader du modélisme en ligne</p>
         </div>
         <div id="authentification">
             <a>Se connecter</a>
@@ -23,7 +23,7 @@ $db = connect();
         </div>
         <div id="contenu">
             <?php
-                affichage_familles($db);
+                affichage($db);
                 close($db);
             ?>
         </div>
