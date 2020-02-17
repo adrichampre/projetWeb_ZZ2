@@ -25,7 +25,7 @@ function affichage_familles($db){
 }
 
 function affichage_articles($id_famille, $db){
-    echo '<a href="index.php" style="float: left">Retour</a>';
+    echo '<a class="myButton" href="index.php" style="float: left">Retour</a>';
     $sql = 'SELECT reference, libelle, detail, prix_ttc, id_tva, image FROM article WHERE id_famille ='. $id_famille;
     $result = $db->query($sql) or die('Erreur SQL : '.mysqli_error($db));
     While($data = mysqli_fetch_array($result))
@@ -36,4 +36,17 @@ function affichage_articles($id_famille, $db){
         echo '</figure>';
     }
 }
+
+/*function afficher_panier($id_famille,$db){
+    if 
+    if (isset($_GET['commander'])){
+        ajouter_article('commander');
+    }
+    if(isset($_GET['Famille'])){
+        affichage_articles($id_famille,$db);
+    }
+
+}*/
+
+
 ?>
