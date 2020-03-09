@@ -59,6 +59,19 @@ body{
     margin: auto;
     max-width: 960px;
 }
+h1{
+    font-family: "EARSLGHT";
+    font-size: 40px;
+    color: #474747;
+    text-align: center;
+}
+h6{
+    font-family: Calibri;
+    font-weight: normal;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+}
 
 #titre {
     background-color: #EAE5DF;
@@ -75,6 +88,8 @@ body{
     height: 175px;
     width: 30%;
     float: left;
+    color: white;
+    text-align: center;
 }
 
 #contenu {
@@ -124,13 +139,16 @@ body{
 
 #panier {
     background-color: #861825;
-    color: #FFFFCC;
-    min-height: 500px;
+    color: white;
+    height: 500px;
     width: 30%;
     float: left;
     text-align: center;
 }
 
+#panier img{
+    float: "center";
+}
 
 #piedPage {
     background-color: #8A5D1D;

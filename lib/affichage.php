@@ -41,4 +41,17 @@ function affichage_articles($id_famille, $db){
         echo '</div>';
     }
 }
+
+/*function afficher_panier($id_famille,$db){
+    if 
+    if (isset($_GET['commander'])){
+        ajouter_article('commander');
+    }
+    if(isset($_GET['Famille'])){
+        affichage_articles($id_famille,$db);
+    }
+
+}*/
+
+
 ?>

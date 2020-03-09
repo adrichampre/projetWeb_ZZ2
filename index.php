@@ -1,6 +1,7 @@
 <?php
 include "./lib/affichage.php";
 include "./lib/DAO.php";
+
 session_start();
 $db = connect();
 ?>
@@ -15,9 +16,18 @@ $db = connect();
 <body>
     <div id="page">
         <div id="titre">
-            <img width="30%" style="float: left" src="img/logo_200px.gif" >  <p>le leader du modélisme en ligne</p>
+            <img width="30%" style="float: left" src="img/logo_200px.gif" >  <h1>le leader du modélisme en ligne</h1>
         </div>
         <div id="authentification">
+            <form method="post" action="enregistre_utili.php">
+                <br>
+                adresse email <br> <input type="texte" name="login" /> 
+                <br>
+                mot de passe <br> <input type="password" name="mdp" /> 
+                <br>
+
+            </form>
+            <br>
             <a class="myButton">Se connecter</a>
             <a class="myButton">Créer un compte</a>
         </div>
@@ -29,16 +39,22 @@ $db = connect();
         </div>
         <div id="panier">
             <div>
-                <img width="30px" style="float: left" src="https://s2.qwant.com/thumbr/0x0/e/f/939d4faafdfac34662361a9f75dc2b32272a91d32f367f5d7d967d6ddbbfb7/Download-Shopping-Cart-Logo-Png-Image-74545-For-Designing-Projects.png?u=http%3A%2F%2Fpngriver.com%2Fwp-content%2Fuploads%2F2018%2F04%2FDownload-Shopping-Cart-Logo-Png-Image-74545-For-Designing-Projects.png&q=0&b=1&p=0&a=1">
-                <p>votre Panier</p>
+                <br>
+                <img width="30px" src="img/panier.gif">
+                <font> votre Panier </font>
+                <br>
             </div>
             <div>
-                <a class="myButton">Ajouter dans panier</a>
+                <hr>
+                <a class="myButton">Vider panier</a>
                 <a class="myButton">Commander</a>
             </div>
         </div>
         <div id="piedPage">
-            <p>TOPModelisme.com ett enregistré au R.C.S</p>
+            <p>TOPModelisme.com est enregistré au R.C.S sous le numero 1234567890
+                <br>
+                13 avenue du Pre la Reine - 75007 Paris
+            </p>
         </div>
     </div>
 
