@@ -18,8 +18,8 @@ $db = connect();
             <img width="30%" style="float: left" src="img/logo_200px.gif" >  <p>le leader du modélisme en ligne</p>
         </div>
         <div id="authentification">
-            <a>Se connecter</a>
-            <a>Créer un compte</a>
+            <a class="myButton">Se connecter</a>
+            <a class="myButton">Créer un compte</a>
         </div>
         <div id="contenu">
             <?php
@@ -33,8 +33,8 @@ $db = connect();
                 <p>votre Panier</p>
             </div>
             <div>
-                <a>Ajouter dans panier</a>
-                <a>Commander</a>
+                <a class="myButton">Ajouter dans panier</a>
+                <a class="myButton">Commander</a>
             </div>
         </div>
         <div id="piedPage">
