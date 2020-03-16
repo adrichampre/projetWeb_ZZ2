@@ -103,11 +103,11 @@ h6{
 
 #contenu figure{
     float: left;
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
     border: solid;
     border-color: #8A5D1D;
-    border-width: 2px;
+    border-width: 1px;
     text-align: center;
     background-color: white;
 }
@@ -116,18 +116,20 @@ h6{
     height: 120px;
 }
 
-#tableArticles{
+#divArticles{
+    width: 100%;
     float: left;
 }
 
 #article {
+    float: left;
     margin: 10px;
     padding: 5px;
     border: solid;
     border-color: #8A5D1D;
     border-width: 1px;
     background-color: white;
-    min-width: 300px;
+    width: 47%;
 }
 
 #article img {
@@ -141,7 +143,12 @@ h6{
 }
 
 #detail{
+    font-size: smaller;
+}
 
+#prix{
+    font-weight: bold;
+    color: #861825;
 }
 
 #contenuArticle {
@@ -215,7 +222,6 @@ h6{
 .myButton:active {
     position:relative;
     top:1px;
-
 }
 
 
