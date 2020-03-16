@@ -1,11 +1,9 @@
 <?php
 include "./lib/affichage.php";
 include "./lib/DAO.php";
-
 session_start();
 $db = connect();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +23,6 @@ $db = connect();
                 <br>
                 mot de passe <br> <input type="password" name="mdp" /> 
                 <br>
-
             </form>
             <br>
             <a class="myButton">Se connecter</a>

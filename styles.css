@@ -84,6 +84,7 @@ h6{
 }
 
 #authentification {
+    margin: auto;
     background-color: #8A5D1D;
     height: 175px;
     width: 30%;
@@ -91,6 +92,7 @@ h6{
     color: white;
     text-align: center;
 }
+
 
 #contenu {
     background-color: #EAE5DF;
@@ -114,22 +116,32 @@ h6{
     height: 120px;
 }
 
+#tableArticles{
+    float: left;
+}
 
 #article {
-    float: left;
-    margin: 20px;
-    padding: 10px;
+    margin: 10px;
+    padding: 5px;
     border: solid;
     border-color: #8A5D1D;
-    border-width: 2px;
+    border-width: 1px;
     background-color: white;
-    min-width: 200px;
+    min-width: 300px;
 }
 
 #article img {
     margin-right: 10px;
     max-height: 70px;
     float: left;
+}
+
+#libelle{
+    font-family: Calibri;
+}
+
+#detail{
+
 }
 
 #contenuArticle {

@@ -23,7 +23,7 @@ function affichage_familles($db){
         echo '</a>';
     }
 }
-
+/*
 function affichage_articles($id_famille, $db){
     echo '<a class="myButton" href="index.php" style="float: left">Retour</a>';
     $sql = 'SELECT reference, libelle, detail, prix_ttc, id_tva, image FROM article WHERE id_famille ='. $id_famille;
@@ -40,7 +40,44 @@ function affichage_articles($id_famille, $db){
             echo '</div>';
         echo '</div>';
     }
+}*/
+
+function affichage_articles($id_famille, $db){
+    $a = 0;
+    echo '<a class="myButton" href="index.php" style="float: left">Retour</a>';
+    $sql = 'SELECT reference, libelle, detail, prix_ttc, id_tva, image FROM article WHERE id_famille ='. $id_famille;
+    $result = $db->query($sql) or die('Erreur SQL : '.mysqli_error($db));
+    //Utiliser des tables pour afficher infos
+    echo '<table id="tableArticles">';
+    While($data = mysqli_fetch_array($result))
+    {
+        if(($a % 2) == 0){
+            echo '<tr>';
+        }
+        echo '<td>
+                <table id="article">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="img_articles/'. $data['image'] . '" alt=""/>
+                        </td>
+                        <td colspan="2">
+                            <p id="libelle">'.$data['libelle'].$a.'</p>
+                            <p id="detail">'.$data['detail'] .'</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>'.$data['prix_ttc'].'€</td> 
+                        <td> 
+                            <a class="myButton">Commander</a>
+                        </td>
+                    </tr>
+                </table>
+               </td>';
+        $a = $a + 1;
+    }
+    echo '</table>';
 }
+
 
 /*function afficher_panier($id_famille,$db){
     if 
