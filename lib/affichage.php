@@ -1,4 +1,16 @@
 <?php
+
+/**
+ * Fonction affichant le titre
+ */
+function affichageTitre()
+{
+    echo '<div id="titre">
+            <img width="30%" style="float: left" src="img/logo_200px.gif" >
+            <h1>le leader du modélisme en ligne</h1>
+          </div>';
+}
+
 /**
  * Fonction affichant le formulaire d'authentification
  */
@@ -157,4 +169,17 @@ function afficherContenuPanier($db){
     }
 }
 
+
+/**
+ * Fonction affichant le pied de page
+ */
+function affichagePiedPage()
+{
+    echo '<div id="piedPage">
+            <p>TOPModelisme.com est enregistré au R.C.S sous le numero 1234567890
+            <br>
+                13 avenue du Pre la Reine - 75007 Paris
+            </p>
+          </div>';
+}
 ?>
