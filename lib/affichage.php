@@ -1,6 +1,11 @@
 <?php
 
 
+/**
+ * Fonction affichant le bloc de contenus des familles et des articles
+ *
+ * @param $db : instance de la base de données
+ */
 function affichageContenu($db)
 {
     echo '<div id="contenu">';
@@ -13,6 +18,11 @@ function affichageContenu($db)
     echo '</div>';
 }
 
+/**
+ * Fonction affichant les familles
+ *
+ * @param $db : instance de la base de données
+ */
 function affichage_familles($db){
     $sql = 'SELECT id, libelle, image, ordre_affichage FROM famille ORDER BY ordre_affichage';
     $result = $db->query($sql) or die('Erreur SQL : '.mysqli_error($db));
@@ -27,6 +37,12 @@ function affichage_familles($db){
     }
 }
 
+/**
+ * Fonction affichant les articles d'une famille
+ *
+ * @param $id_famille : ID de la famille à afficher
+ * @param $db : instance de la base de données
+ */
 function affichage_articles($id_famille, $db){
     echo '<a class="myButton" href="index.php" style="float: left">Retour</a>';
     $sql = 'SELECT id, reference, libelle, detail, prix_ttc, id_tva, image FROM article WHERE id_famille ='. $id_famille;
@@ -56,14 +72,19 @@ function affichage_articles($id_famille, $db){
     echo '</div>';
 }
 
+/**
+ * Fonction affichant le panier
+ *
+ * @param $db : instance de la base de données
+ */
 function affichagePanier($db)
 {
     echo '<div id="panier">
             <div id="tetePanier">
                 <img width="30px" src="img/panier.gif"/>
-                <font>votre panier</font>
-                <hr>
-            </div>';
+                <b>votre panier</b>
+            </div>
+            <hr>';
 
     if (isset($_GET['Commander']))
         ajouter_article($_GET['Commander'], $db);
@@ -73,6 +94,11 @@ function affichagePanier($db)
     echo '</div>';
 }
 
+/**
+ * Fonction affichant le contenu du panier
+ *
+ * @param $db : instance de la base de données
+ */
 function afficherContenuPanier($db){
     if(isset($_GET['Vide_panier'])){
         viderPanier($db);
