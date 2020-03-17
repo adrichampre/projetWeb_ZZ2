@@ -11,40 +11,41 @@ function connect(){
 function close($db){
     mysqli_close($db);
 }
-/*
-function afficher_panier($id,$id_client,,$id_famille,$db){
-    $sql = 'SELECT id,date_creation,id_client,id_session FROM panier';
-    $result = $db->query($sql) or die('Erreur SQL : '.mysqli_error($db));
 
-    
-    
-    echo '<a class="myButton" href="index.php" >Vider panier</a>';
-    echo '<a class="myButton" href="index.php" >Commander</a>';
-
-    $sql = 'SELECT reference, libelle, detail, prix_ttc, id_tva, image FROM article WHERE id_famille ='. $id_famille;
-    $result = $db->query($sql) or die('Erreur SQL : '.mysqli_error($db));
-
-
-    While($data = mysqli_fetch_array($result))
-    {
-        echo '<figure>';
-        echo '<img src="img_articles/'. $data['image'] . '" alt=""/>';
-        echo '<figcaption>'.$data['libelle'] .'</figcaption>';
-        echo '</figure>';
+function ajouter_article($id_article, $db){
+    if (isset($_GET['Commander'])){
+        $sql = 'SELECT taux, prix_ttc
+                FROM article INNER JOIN tva ON (article.id_tva = tva.id)
+                WHERE article.id = '.$id_article.';';
+        $result = $db->query($sql);
+        $data = mysqli_fetch_array($result);
+        if(!empty($data)){
+            $sql = 'SELECT * FROM panier_article WHERE id_article = '.$id_article.';';
+            $result = $db->query($sql);
+            $test = mysqli_fetch_array($result);
+            if(!empty($test))
+            {
+                $sql = 'UPDATE panier_article
+                        SET quantite = quantite+1
+                        WHERE id_article='.$id_article.';';
+            }
+            else {
+                $data['prix_ht'] = $data['prix_ttc'] / (1+$data['taux']/100);
+                $data['prix_tva'] = $data['prix_ttc'] - $data['prix_ht'];
+                $sql = 'INSERT INTO panier_article 
+                        VALUES (1, '. $id_article .', 1, ' . $data['prix_ht'] . ', ' . $data['prix_tva'] . ',  ' . $data['prix_ttc'] . ');';
+            }
+            $db->query($sql) or die('Erreur SQL : ' . mysqli_error($db));
+        }
     }
-
-
-    if (isset($_GET['commander'])){
-        ajouter_article('commander');
-    }
-    if(isset($_GET['Famille'])){
-        affichage_articles($id_famille,$db);
-    }
-
 }
 
-function ajouter_article($id_client,$db){
-
-}*/
+function viderPanier($db){
+    if (isset($_GET['Vide_panier'])){
+        $sql ='DELETE FROM panier_article
+               WHERE id_panier = 1';
+        $db->query($sql);
+    }
+}
 
 ?>

@@ -59,12 +59,14 @@ body{
     margin: auto;
     max-width: 960px;
 }
+
 h1{
     font-family: "EARSLGHT";
     font-size: 40px;
     color: #474747;
     text-align: center;
 }
+
 h6{
     font-family: Calibri;
     font-weight: normal;
@@ -138,16 +140,16 @@ h6{
     float: left;
 }
 
-#libelle{
+.libelle{
     font-family: Calibri;
 }
 
-#detail{
+.detail{
     font-size: smaller;
 }
 
 #prix{
-    font-weight: bold;
+    font-family: ERASDEMI;
     color: #861825;
 }
 
@@ -159,14 +161,27 @@ h6{
 #panier {
     background-color: #861825;
     color: white;
-    height: 500px;
+    min-height: 500px;
     width: 30%;
     float: left;
+}
+
+#tetePanier{
+    float: left;
+    width: 100%;
+    padding-top: 5px;
+    font-family: Calibri;
+    font-size: x-large;
     text-align: center;
 }
 
-#panier img{
-    float: "center";
+.total{
+    text-align: right;
+    font-family: ERASDEMI;
+}
+
+.tablePanier{
+width: 100%;
 }
 
 #piedPage {
@@ -180,7 +195,6 @@ h6{
 }
 
 .myButton {
-
     font-family:'Eras';
     margin:5px 10px 5px 10px;
     -moz-box-shadow: 0px 10px 9px -7px #404242;

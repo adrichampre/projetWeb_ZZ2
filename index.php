@@ -1,6 +1,6 @@
 <?php
-include "./lib/affichage.php";
 include "./lib/DAO.php";
+include "./lib/affichage.php";
 session_start();
 $db = connect();
 ?>
@@ -28,25 +28,10 @@ $db = connect();
             <a class="myButton">Se connecter</a>
             <a class="myButton">Créer un compte</a>
         </div>
-        <div id="contenu">
-            <?php
-                affichage($db);
-                close($db);
-            ?>
-        </div>
-        <div id="panier">
-            <div>
-                <br>
-                <img width="30px" src="img/panier.gif">
-                <font> votre Panier </font>
-                <br>
-            </div>
-            <div>
-                <hr>
-                <a class="myButton">Vider panier</a>
-                <a class="myButton">Commander</a>
-            </div>
-        </div>
+        <?php
+            affichageContenu($db);
+            affichagePanier($db);
+        ?>
         <div id="piedPage">
             <p>TOPModelisme.com est enregistré au R.C.S sous le numero 1234567890
                 <br>
@@ -54,6 +39,8 @@ $db = connect();
             </p>
         </div>
     </div>
-
 </body>
+<?php
+close($db);
+?>
 </html>
