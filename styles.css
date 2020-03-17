@@ -43,7 +43,6 @@
     src: url('font/ERASLGHT.TTF');
 }
 
-
 body{
     background-color: gray;
 }
@@ -94,7 +93,6 @@ h6{
     color: white;
     text-align: center;
 }
-
 
 #contenu {
     background-color: #EAE5DF;

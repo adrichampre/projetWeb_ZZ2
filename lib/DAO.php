@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Fonction de connexion à la base de données
  *
@@ -11,7 +9,6 @@ function connect(){
     $db->query('SET NAMES UTF8');
     return $db;
 }
-
 
 /**
  * Fonction de déconnexion à la base de données

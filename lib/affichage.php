@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Fonction affichant le formulaire d'authentification
  */
