@@ -16,19 +16,8 @@ $db = connect();
         <div id="titre">
             <img width="30%" style="float: left" src="img/logo_200px.gif" >  <h1>le leader du modélisme en ligne</h1>
         </div>
-        <div id="authentification">
-            <form method="post" action="enregistre_utili.php">
-                <br>
-                adresse email <br> <input type="texte" name="login" /> 
-                <br>
-                mot de passe <br> <input type="password" name="mdp" /> 
-                <br>
-            </form>
-            <br>
-            <a class="myButton">Se connecter</a>
-            <a class="myButton">Créer un compte</a>
-        </div>
         <?php
+            affichageAuth();
             affichageContenu($db);
             affichagePanier($db);
         ?>
@@ -40,7 +29,7 @@ $db = connect();
         </div>
     </div>
 </body>
+</html>
 <?php
 close($db);
 ?>
-</html>

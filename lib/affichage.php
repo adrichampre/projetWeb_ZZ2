@@ -1,5 +1,25 @@
 <?php
 
+/**
+ * Fonction affichant le formulaire d'authentification
+ */
+function affichageAuth()
+{
+    echo '<div id="authentification">
+            <form method="post" action="enregistre_utili.php">
+                <p>adresse email 
+                    <br> 
+                    <input type="texte" name="login" /> 
+                </p>
+                <p>mot de passe
+                    <br> 
+                    <input type="password" name="mdp" /> 
+                </p>
+            </form>
+            <a class="myButton">Se connecter</a>
+            <a class="myButton">Créer un compte</a>
+          </div>';
+}
 
 /**
  * Fonction affichant le bloc de contenus des familles et des articles
@@ -9,12 +29,10 @@
 function affichageContenu($db)
 {
     echo '<div id="contenu">';
-
     if(isset($_GET['Famille']))
         affichage_articles($_GET['Famille'], $db);
     else
         affichage_familles($db);
-
     echo '</div>';
 }
 
